@@ -9,15 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  // @ViewChild('loginForm') login!: ElementRef;
-  // @ViewChild('loginForm') login!: HTMLFormElement;
-  // @ViewChild('loginForm') login!: NgForm;
 
-  //   loginForm = this.fb.group({
-  //     username: ['', Validators.required, Validators.pattern()]
-  // email:
-  //       password:
-  //   })
   constructor(
     private authService: AuthService,
     private router: Router,

@@ -1,16 +1,17 @@
 <div class="container py-4">
-  <div *ngIf="moviedetails">
+  <div *ngIf="productDetails">
     <div>
-      <img [src]="moviedetails.image" width="200" height="200" alt="Movie Image">
+      <img [src]="productDetails.image" width="200" height="200" alt="Movie Image">
     </div>
     <div>
-      <h1>{{moviedetails.id}}</h1>
-      <p>{{moviedetails.title}}</p>
-      <p>{{moviedetails.year}}</p>
-      <p>{{moviedetails.price}}</p>
+      <h1>{{productDetails.id}}</h1>
+      <p>{{productDetails.title}}</p>
+      <p>{{productDetails.year}}</p>
+      <p>{{productDetails.price|currency}}</p>
     </div>
+    <div class="d-flex align-item-end"><button class="btn btn-primary " [routerLink]="['/products']">Back</button></div>
   </div>
-  <div *ngIf="!moviedetails">
+  <div *ngIf="!productDetails">
     <p>لا توجد تفاصيل متاحة.</p>
   </div>
 </div>

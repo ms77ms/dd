@@ -17,7 +17,9 @@
 
       </ul>
       <div class="d-flex gap-3">
-        <button class="btn btn-primary" [routerLink]="['/auth']">Login</button>
+        <div *ngif="this.authService.isLoggedIn == true"><button class="btn btn-primary" [routerLink]="['/auth']">Login</button></div> 
+        
+       
         <button class="btn btn-primary" (click)="logout()">Logout </button>
       </div>
     </div>
