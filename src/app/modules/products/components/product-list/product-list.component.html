@@ -1,0 +1,36 @@
+<section class="mt-4">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr class="">
+          <th scope="col">#</th>
+          <th scope="col">title</th>
+          <th scope="col">category</th>
+          <th scope="col">price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of products">
+          <tr>
+            <th>
+              <img [src]="item.image" alt="" width="50" height="50">
+            </th>
+            <td>{{item.title}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.price | currency}}</td>
+            <td>
+              <div class="d-flex gap-3">
+                <button class="btn btn-primary" [routerLink]="['/products/product-details']"
+                  [queryParams]="{id:item.id}">Details</button>
+                <button class="btn btn-primary">Add</button>
+                <!-- <button>Edit</button> -->
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+
+      </tbody>
+    </table>
+  </div>
+</section>

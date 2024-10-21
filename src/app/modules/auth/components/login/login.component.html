@@ -1,0 +1,44 @@
+<div class="container">
+  <!--
+  -template driven form
+  -reactive form
+  -->
+  <form aria-label="login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-6 col-10">
+        <div class="shadow rounded p-4">
+          <div>
+            <label class="form-label" for="">User Name</label>
+            <input type="text" class="form-control" name="username" ngModel placeholder="Enter username" required
+              #username="ngModel" pattern="[a-zA-Z]+">
+            <div *ngIf="username.invalid&&username.touched&&username.errors">
+              <small class="text-danger" *ngIf="username.errors['required']">Username is Required</small>
+              <small class="text-danger" *ngIf="username.errors['pattern']">Username must be only letters</small>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="form-label" for="">Email</label>
+            <input type="email" class="form-control" #email="ngModel" name="email" email ngModel
+              placeholder="Enter Email" required>
+            <!-- {{email.className}} -->
+            <div *ngIf="email.invalid && email.errors&& email.touched">
+              <small class="text-danger" *ngIf="email.errors['required']">
+                Email is Required</small>
+              <small class="text-danger" *ngIf="email.errors['email']">
+                Email is not correct</small>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="form-label" for="">Password</label>
+            <input type="password" name="password" ngModel class="form-control" placeholder="Enter password">
+          </div>
+
+          <div class="mt-4 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+          </div>
+          <p> Dont have account? <a routerLink="/auth/register">Register</a></p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

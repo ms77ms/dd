@@ -1,0 +1,16 @@
+<div class="container py-4">
+  <div *ngIf="moviedetails">
+    <div>
+      <img [src]="moviedetails.image" width="200" height="200" alt="Movie Image">
+    </div>
+    <div>
+      <h1>{{moviedetails.id}}</h1>
+      <p>{{moviedetails.title}}</p>
+      <p>{{moviedetails.year}}</p>
+      <p>{{moviedetails.price}}</p>
+    </div>
+  </div>
+  <div *ngIf="!moviedetails">
+    <p>لا توجد تفاصيل متاحة.</p>
+  </div>
+</div>

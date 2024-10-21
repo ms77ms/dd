@@ -1,0 +1,23 @@
+nav {
+  background-color: antiquewhite;
+  padding: 1rem;
+}
+ul {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+}
+ul li {
+  list-style-type: none;
+}
+ul li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #111;
+}
+
+.active {
+  background-color: chocolate;
+  color: #fff !important;
+}
