@@ -2,24 +2,14 @@
   <div class="container">
     <div class="d-flex justify-content-between">
       <ul>
-        <li>
-          <a [routerLink]="['/home']" routerLinkActive="active">home</a>
-        </li>
-        <li>
-          <a [routerLink]="['/about']" routerLinkActive="active">about</a>
-        </li>
-        <li>
-          <a [routerLink]="['/contact']" routerLinkActive="active">contact</a>
-        </li>
-        <li>
-          <a [routerLink]="['/products']" routerLinkActive="active">products</a>
-        </li>
+        <li><a [routerLink]="['/home']" routerLinkActive="active">home</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="active">about</a></li>
+        <!-- <li><a [routerLink]="['/contact']" routerLinkActive="active">contact</a></li> -->
+        <li><a [routerLink]="['/products']" routerLinkActive="active">products</a></li>
 
       </ul>
       <div class="d-flex gap-3">
         <div *ngif="this.authService.isLoggedIn == true"><button class="btn btn-primary" [routerLink]="['/auth']">Login</button></div> 
-        
-       
         <button class="btn btn-primary" (click)="logout()">Logout </button>
       </div>
     </div>
